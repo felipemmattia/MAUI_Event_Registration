@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ProjetoEventos.Views.ResumoEventoPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="#121212"
+    Shell.NavBarIsVisible="False">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="20">
+
+            <!-- Título -->
+            <Label Text="Resumo do Evento"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   TextColor="#784EFF"
+                   HorizontalTextAlignment="Center"
+                   Margin="0,10,0,20" />
+
+            <!-- Dados principais -->
+            <Frame Padding="20"
+                   CornerRadius="15"
+                   BackgroundColor="#121212"
+                   BorderColor="#1E1E1E">
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Label Text="INFORMAÇÕES GERAIS"
+                           FontAttributes="Bold"
+                           FontSize="18"
+                           TextColor="#784EFF"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Text="{Binding Evento.NomeEvento, StringFormat='Nome: {0}'}"
+                           TextColor="White" />
+
+                    <Label Text="{Binding Evento.LocalEvento, StringFormat='Local: {0}'}"
+                           TextColor="White" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Datas -->
+            <Frame Padding="20"
+                   CornerRadius="15"
+                   BackgroundColor="#121212"
+                   BorderColor="#1E1E1E">
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Label Text="DATAS"
+                           FontAttributes="Bold"
+                           FontSize="18"
+                           TextColor="#784EFF"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Text="{Binding Evento.DataInicio, StringFormat='Início: {0:dd/MM/yyyy}'}"
+                           TextColor="White" />
+
+                    <Label Text="{Binding Evento.DataFim, StringFormat='Fim: {0:dd/MM/yyyy}'}"
+                           TextColor="White" />
+
+                    <Label Text="{Binding Evento.DuracaoEmDias, StringFormat='Duração: {0} dias'}"
+                           TextColor="#CCC"
+                           FontAttributes="Bold"
+                           Margin="0,5,0,0" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Custos -->
+            <Frame Padding="20"
+                   CornerRadius="15"
+                   BackgroundColor="#121212"
+                   BorderColor="#1E1E1E">
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Label Text="CUSTOS"
+                           FontAttributes="Bold"
+                           FontSize="18"
+                           TextColor="#784EFF"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Text="{Binding Evento.NumeroParticipantes,
+                                          StringFormat='Participantes: {0}'}"
+                           TextColor="White" />
+
+                    <Label Text="{Binding Evento.CustoPorParticipante,
+                                          StringFormat='Preço por participante: R$ {0:F2}'}"
+                           TextColor="White" />
+
+                    <Label Text="{Binding Evento.CustoTotal,
+                                          StringFormat='Custo Total: R$ {0:F2}'}"
+                           TextColor="#00D26A"
+                           FontAttributes="Bold"
+                           FontSize="18"
+                           Margin="0,10,0,0" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
