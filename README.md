@@ -1,1 +1,1 @@
-# ProjetoEventos
+# MAUI_Event_Registration
